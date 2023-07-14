@@ -17,12 +17,16 @@ export const Header = ({children}: ParentComponentProps) => {
            <Image 
                 className={`animate-bounce`}
                 src={"https://raw.githubusercontent.com/sleduardo20/pokedex/0671af442dff1d8f7141e49eb83b438885bbc9e9/public/img/logo.svg"}
-                width={340}
+                width={300}
                 height={300}
                 alt="Pokedéx"
             />
 
-            {children}
+            <div className={`
+                flex flex-row items-end justify-around w-screen 
+            `}>
+                {children}
+            </div>
 
         </div>
     )

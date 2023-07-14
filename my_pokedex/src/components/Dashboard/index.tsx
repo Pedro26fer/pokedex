@@ -1,33 +1,46 @@
-import axios from "axios";
-import { useState, useEffect } from "react";
+import {useEffect } from "react";
 import { PokerCards } from "../PokerCards";
+import { getPokemons } from "@/assets/indext";
 
-export const Dasboard = () => {
+interface SearchedPokemon {
+    id: number
+    name:string
 
-    const [pokemonList, setPokemonList] = useState([] as any[])
+}
+interface PageOfPokemons {
+    pokemon: string
+    searchedPokemon: SearchedPokemon
+    pageOfPokemons: string
+    setNextPage: (value: string) => void
+    setPreviousPage: (value: string) => void
+    pokemonList : any[]
+    setPokemonsList: (value: []) => void
+}
 
-    useEffect(() => {
-        async () => {
-            try {
-                const response = await axios.get("https://pokeapi.co/api/v2/pokemon?limit=15")
-                setPokemonList(response.data.results)
-                console.log(pokemonList)
-            } catch (error) {
-                console.log(error)
-            }
-        }
-    }, [pokemonList, setPokemonList])
+export const Dasboard = ({pageOfPokemons, setNextPage, setPreviousPage, pokemonList, setPokemonsList, pokemon, searchedPokemon} : PageOfPokemons) => {
+
+    useEffect(() => {getPokemons(pageOfPokemons,setPokemonsList,setNextPage,setPreviousPage)}, [])
+
     return(
         <div className={`
-            flex flex-col items-center justify-center w-screen bg-black h-
+            flex flex-col items-center justify-center max-w-screen-lg h-4/6
         `}>
-            <ul className={`flex  justify-center items-centerflex-row flex-wrap gap-2 `}>
-                {pokemonList.map((pokemon, index) => (
-                    <li key={index}><PokerCards name={pokemon.name} url={pokemon.url}/></li>
+            {pokemon.length < 1 ? (
+                <ul className={`flex  justify-center items-center flex-row flex-wrap w-full gap-6`}>
+                    {pokemonList.map((pokemon, index) => (
+                        <li key={index}><PokerCards name={pokemon.name} url={pokemon.url}/></li>
                 ))}
-            </ul>
-            
+                </ul>          
 
+            ) 
+        :
+            (
+                <ul className={`flex  justify-center items-center flex-row flex-wrap w-full gap-3`}>
+                    <li key={searchedPokemon.id}><PokerCards name={pokemon} url={`https://pokeapi.co/api/v2/pokemon/${pokemon}/`}/></li>
+                </ul>
+            )
+        
+        }
         </div>
 
     )

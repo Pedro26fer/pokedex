@@ -1,23 +1,40 @@
 import { Dasboard } from "@/components/Dashboard"
 import {Header} from "../components/Header"
 import { SearchBar } from '@/components/Search'
-import { useEffect, useState } from "react"
+import {useState } from "react"
+import { ButtonPage } from "@/components/ButtonPages"
+import { searchPokemon } from "@/assets/indext"
 
 
 
 export default function Home() {
 
+  const pageOfPokemons: string = "https://pokeapi.co/api/v2/pokemon?offset=0&limit=6" 
+
   const [pokemon, setPokemon] = useState<string>('')
+  const [searchedPokemon, setSearchedPokemon] = useState<any>([])
+  const [nextPage, setNextPage] = useState<string>("")
+  const [previousPage, setPreviousPage] = useState<string>("")
+  const [pokemonList, setPokemonList] = useState<any>([])
 
   
   return (
     <main
-      className={`flex min-h-screen flex-col items-center`}
+      className={`flex min-h-screen flex-col items-center min-w-full gap-3`}
     >
       <Header>
-        <SearchBar pokemon={pokemon} setPokemon={setPokemon}/>
+        <ButtonPage next={nextPage} previous={previousPage} setNextPage={setNextPage} setPokemonList={setPokemonList} setPreviousPaget={setPreviousPage}>Anterior</ButtonPage>
+        {/* <div className={` flex flex-col items-center justify-center gap-3`}> */}
+          <SearchBar pokemon={pokemon} setPokemon={setPokemon}/>
+          {/* <button className={`
+            font-mono  text-red-500 bg-white p-1 rounded-md           
+          `}
+          onClick={() => searchPokemon(pokemon, searchedPokemon, setSearchedPokemon)}
+          >Capturar</button>
+        </div> */}
+        <ButtonPage next={nextPage} previous={previousPage} setPokemonList={setPokemonList} setNextPage={setNextPage} setPreviousPaget={setPreviousPage}>Próxima</ButtonPage>
       </Header>
-      <Dasboard/>      
+      <Dasboard searchedPokemon={searchedPokemon} pokemon={pokemon} pageOfPokemons={pageOfPokemons} setNextPage={setNextPage} setPreviousPage={setPreviousPage} pokemonList={pokemonList} setPokemonsList={setPokemonList}/>      
    
    </main>
   )
