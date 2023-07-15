@@ -2,14 +2,13 @@ import {useEffect } from "react";
 import { PokerCards } from "../PokerCards";
 import { getPokemons } from "@/assets/indext";
 
-interface SearchedPokemon {
-    id: number
-    name:string
+// interface SearchedPokemon {
+//     id: number
+//     name:string
 
-}
+// }
 interface PageOfPokemons {
     pokemon: string
-    searchedPokemon: SearchedPokemon
     pageOfPokemons: string
     setNextPage: (value: string) => void
     setPreviousPage: (value: string) => void
@@ -17,7 +16,7 @@ interface PageOfPokemons {
     setPokemonsList: (value: []) => void
 }
 
-export const Dasboard = ({pageOfPokemons, setNextPage, setPreviousPage, pokemonList, setPokemonsList, pokemon, searchedPokemon} : PageOfPokemons) => {
+export const Dasboard = ({pageOfPokemons, setNextPage, setPreviousPage, pokemonList, setPokemonsList, pokemon} : PageOfPokemons) => {
 
     useEffect(() => {getPokemons(pageOfPokemons,setPokemonsList,setNextPage,setPreviousPage)}, [])
 
@@ -25,7 +24,7 @@ export const Dasboard = ({pageOfPokemons, setNextPage, setPreviousPage, pokemonL
         <div className={`
             flex flex-col items-center justify-center max-w-screen-lg h-4/6
         `}>
-            {pokemon.length < 1 ? (
+            {pokemon.length < 4 ? (
                 <ul className={`flex  justify-center items-center flex-row flex-wrap w-full gap-6`}>
                     {pokemonList.map((pokemon, index) => (
                         <li key={index}><PokerCards name={pokemon.name} url={pokemon.url}/></li>
@@ -36,7 +35,7 @@ export const Dasboard = ({pageOfPokemons, setNextPage, setPreviousPage, pokemonL
         :
             (
                 <ul className={`flex  justify-center items-center flex-row flex-wrap w-full gap-3`}>
-                    <li key={searchedPokemon.id}><PokerCards name={pokemon} url={`https://pokeapi.co/api/v2/pokemon/${pokemon}/`}/></li>
+                    <li><PokerCards name={pokemon} url={`https://pokeapi.co/api/v2/pokemon/${pokemon}/`}/></li>
                 </ul>
             )
         

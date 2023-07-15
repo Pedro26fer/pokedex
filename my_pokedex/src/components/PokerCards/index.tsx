@@ -1,6 +1,7 @@
-import axios from "axios"
-import { useEffect, useState } from "react"
+import { imageUrl } from "@/assets/indext"
+import React, { useEffect, useState } from "react"
 import Image from "next/image"
+import { useRouter } from "next/router"
 
 interface PokemonItem {
     name: string,
@@ -10,17 +11,14 @@ interface PokemonItem {
 export const PokerCards = ({name, url} : PokemonItem) => {
 
     const [urlImage, setUrlImage] = useState<string>('')
+    const router = useRouter()
 
-    const imageUrl = async () => {
-        try {
-            const response = await axios.get(url)
-            setUrlImage(response.data.sprites.front_default)
-        } catch (error) {
-            console.log(error)
-        }
+    const  moreDetails = (name: string) => {
+        router.push(`/pokemons/${name}`)
     }
+  
 
-    useEffect(() => {imageUrl()},[url])
+    useEffect(() => {imageUrl({url, setUrlImage})},[url])
     
     
     return(
@@ -30,14 +28,14 @@ export const PokerCards = ({name, url} : PokemonItem) => {
         font-semibold text-lg
         `}>
             <Image
-                className={` border border-yellow-500 border-3 rounded-md`}
+                className={`border border-yellow-500 border-3 rounded-md`}
                 src={urlImage}
-                alt={name}
+                alt="Pokemon não encontrado"
                 width={180}
                 height={200}            
             />
             <h1>{name}</h1>
-            <button className={`text-sm text-red-500`}>veja mais</button>
+            <button className={`text-sm text-red-500 hover:shadow-md hover:text-red-700`} onClick={() => moreDetails(name)}>veja mais</button>
         </div>
     )
 }

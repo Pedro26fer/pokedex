@@ -1,4 +1,5 @@
 import axios from "axios";
+import { AllDetails } from "@/pages/pokemons/[name]";
 
 export const getPokemons = async (
   pageOfPokemons: string,
@@ -16,14 +17,37 @@ export const getPokemons = async (
   }
 };
 
-export const searchPokemon = async (pokemon: string, searchedPokemon: {}, setSearchedPokemon: (value: string) => void) => {
+export const moreDetaislOfPokemon = async (
+  pokemonName: string,
+  setImageOfPokemon: (value: string) => void,
+  setAllDtails: (value: AllDetails) => void,
+  setTypes: (value: []) => void,
+  setSkills: (value: []) => void
+) => {
   try {
-    const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemon}/`)
-    setSearchedPokemon(response.data)
-    console.log(searchedPokemon)
-
+    const response = await axios.get(
+      `https://pokeapi.co/api/v2/pokemon/${pokemonName}/`
+    );
+    console.log(response.data);
+    setImageOfPokemon(response.data.sprites.other.home.front_default);
+    setAllDtails(response.data)
+    setSkills(response.data.abilities)
+    setTypes(response.data.types)
   } catch (error) {
-    alert(error)
+    alert(error);
   }
+};
+
+interface ImagePokemon {
+  url: string;
+  setUrlImage: (value: string) => void;
 }
 
+export const imageUrl = async ({ url, setUrlImage }: ImagePokemon) => {
+  try {
+    const response = await axios.get(url);
+    setUrlImage(response.data.sprites.front_default);
+  } catch (error) {
+    console.log(error);
+  }
+};

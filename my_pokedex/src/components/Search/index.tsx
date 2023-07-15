@@ -1,9 +1,8 @@
 export interface Pokemon {
-  pokemon: string;
   setPokemon: (value: string) => void;
 }
 
-export const SearchBar = ({ pokemon, setPokemon }: Pokemon) => {
+export const SearchBar = ({setPokemon }: Pokemon) => {
   
   return (
     <div className={`flex flex-col items-center gap-2`}>
