@@ -63,7 +63,7 @@ const SaibaMais = () => {
         >
           Voltar
         </button>
-        
+
       </div>
       <main
         className={` h-full flex min-flex-row justify-around items-center min-w-screen gap-3 p-4`}
@@ -86,9 +86,9 @@ const SaibaMais = () => {
             className={` text-white flex flex-col gap-3 font-serif text-lg `}
           >
             <span>Nome: {name} </span>
-            <span>Peso: {allDetails.weight} </span>
+            <span>Peso: {allDetails.weight} lb </span>
             <span>Ordem: {allDetails.order} </span>
-            <span>Altura: {allDetails.height} </span>
+            <span>Altura: {allDetails.height} ft </span>
             <span>Experiência: {allDetails.base_experience} </span>
           </div>
         </div>
