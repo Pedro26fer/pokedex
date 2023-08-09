@@ -22,10 +22,10 @@ export const Dasboard = ({pageOfPokemons, setNextPage, setPreviousPage, pokemonL
 
     return(
         <div className={`
-            flex flex-col items-center justify-center max-w-screen-lg h-4/6
+            flex flex-col w-screen-lg h-4/6 
         `}>
             {pokemon.length < 4 ? (
-                <ul className={`flex  justify-center items-center flex-row flex-wrap w-full gap-6`}>
+                <ul className={`flex  justify-center items-center flex-row flex-wrap w-full gap-4`}>
                     {pokemonList.map((pokemon, index) => (
                         <li key={index}><PokerCards name={pokemon.name} url={pokemon.url}/></li>
                 ))}

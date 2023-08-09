@@ -9,7 +9,7 @@ import { ButtonPage } from "@/components/ButtonPages"
 
 export default function Home() {
 
-  const pageOfPokemons: string = "https://pokeapi.co/api/v2/pokemon?offset=0&limit=6" 
+  const pageOfPokemons: string = "https://pokeapi.co/api/v2/pokemon?offset=0&limit=25" 
 
   const [pokemon, setPokemon] = useState<string>('')
   const [nextPage, setNextPage] = useState<string>("")
