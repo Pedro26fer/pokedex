@@ -35,11 +35,6 @@ export default function Home() {
           <ButtonPage next={nextPage} previous={previousPage} setPokemonList={setPokemonList} setNextPage={setNextPage} setPreviousPaget={setPreviousPage}>Próxima</ButtonPage>
         </Header>
         <Dasboard pokemon={pokemon} pageOfPokemons={pageOfPokemons} setNextPage={setNextPage} setPreviousPage={setPreviousPage} pokemonList={pokemonList} setPokemonsList={setPokemonList}/>      
-        <AdBanner
-               data-ad-slot="6794522996"
-               data-ad-format="auto"
-               data-full-width-responsive="true"        
-        />
       </main>
     </div>
   )

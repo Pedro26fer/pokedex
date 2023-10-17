@@ -5,7 +5,7 @@ const AdBanner = (props: any) => {
     try {
       (window.adsbygoogle = window.adsbygoogle || []).push({});
     } catch (err) {
-      console.log(err);
+      console.log(window.adsbygoogle);
     }
   }, []);
 
