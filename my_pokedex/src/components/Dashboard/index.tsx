@@ -1,7 +1,7 @@
 import {useEffect } from "react";
 import { PokerCards } from "../PokerCards";
 import { getPokemons } from "@/assets/indext";
-import AdBanner from "../AdBanner";
+
 
 // interface SearchedPokemon {
 //     id: number
@@ -41,7 +41,7 @@ export const Dasboard = ({pageOfPokemons, setNextPage, setPreviousPage, pokemonL
             )
         
         }
-            <AdBanner/>
+
         </div>
 
     )

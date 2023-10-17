@@ -4,7 +4,7 @@ import {Header} from "../components/Header"
 import { SearchBar } from '@/components/Search'
 import {useState } from "react"
 import { ButtonPage } from "@/components/ButtonPages"
-import AdBanner from "@/components/AdBanner"
+import { Adsense } from "@ctrl/react-adsense"
 
 
 
@@ -34,6 +34,14 @@ export default function Home() {
           <SearchBar setPokemon={setPokemon}/>
           <ButtonPage next={nextPage} previous={previousPage} setPokemonList={setPokemonList} setNextPage={setNextPage} setPreviousPaget={setPreviousPage}>Próxima</ButtonPage>
         </Header>
+
+        <Adsense 
+          client={String(process.env.NEXT_PUBLIC_GOOGLE_ADS_CLIENT_ID)} 
+          slot="7598099081"
+          style={{ width: 1280, height: 200, backgroundColor: "#ccc", borderRadius: 20, margin: 20 }}
+          format=""
+        />
+
         <Dasboard pokemon={pokemon} pageOfPokemons={pageOfPokemons} setNextPage={setNextPage} setPreviousPage={setPreviousPage} pokemonList={pokemonList} setPokemonsList={setPokemonList}/>      
       </main>
     </div>
