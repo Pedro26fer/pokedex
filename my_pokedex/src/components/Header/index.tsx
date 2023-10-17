@@ -33,3 +33,5 @@ export const Header = ({children}: ParentComponentProps) => {
 }
 
 
+{/* <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7287018887736567"
+     crossorigin="anonymous"></script> */}
