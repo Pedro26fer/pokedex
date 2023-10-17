@@ -20,7 +20,7 @@ export default function Home() {
 
   
   return (
-    <>
+    <div style={{overflowX:"hidden", paddingBottom: "20px"}}>
       <Head>
         <title>Pokedéx</title>
         <meta name="description" content="All pokemóns in pokedéx" />
@@ -35,7 +35,7 @@ export default function Home() {
         </Header>
         <Dasboard pokemon={pokemon} pageOfPokemons={pageOfPokemons} setNextPage={setNextPage} setPreviousPage={setPreviousPage} pokemonList={pokemonList} setPokemonsList={setPokemonList}/>      
     
-    </main>
-    </>
+      </main>
+    </div>
   )
 }

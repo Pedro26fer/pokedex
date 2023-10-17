@@ -1,6 +1,6 @@
-import { ClassAttributes, InsHTMLAttributes, JSX, useEffect } from 'react';
+import { useEffect } from 'react';
 
-const AdBanner = (props: JSX.IntrinsicAttributes & ClassAttributes<HTMLModElement> & InsHTMLAttributes<HTMLModElement>) => {
+const AdBanner = (props: any) => {
   useEffect(() => {
     try {
       (window.adsbygoogle = window.adsbygoogle || []).push({});

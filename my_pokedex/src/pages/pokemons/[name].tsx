@@ -56,7 +56,7 @@ const SaibaMais = () => {
   };
 
   return (
-    <SeoOptimization description="Pokémon skills and power" title="Pokémon">
+    <SeoOptimization title="Pokémon" description="Pokémon skills and power" >
 
       <div className={`bg-orange-100 flex flex-col h-screen `}>
         <div className={`flex p-8`}>
