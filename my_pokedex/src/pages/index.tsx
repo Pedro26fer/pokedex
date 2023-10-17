@@ -35,6 +35,19 @@ export default function Home() {
           <ButtonPage next={nextPage} previous={previousPage} setPokemonList={setPokemonList} setNextPage={setNextPage} setPreviousPaget={setPreviousPage}>Próxima</ButtonPage>
         </Header>
         <Dasboard pokemon={pokemon} pageOfPokemons={pageOfPokemons} setNextPage={setNextPage} setPreviousPage={setPreviousPage} pokemonList={pokemonList} setPokemonsList={setPokemonList}/>      
+        <ins
+          className="adsbygoogle"
+          style={{ display: "block" }}
+          data-ad-client="ca-pub-987************676"
+          data-ad-slot="776****95"
+          data-ad-format="auto"
+            data-full-width-responsive="true"
+        > </ins>
+      <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});    
+     </script>
+      
+      
       </main>
     </div>
   )
