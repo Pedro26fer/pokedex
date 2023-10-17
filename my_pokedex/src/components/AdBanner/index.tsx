@@ -14,9 +14,10 @@ const AdBanner = (props: any) => {
       className="adsbygoogle adbanner-customize"
       style={{
         display: 'block',
-        overflow: 'hidden',
+        overflow: 'hidden',       
       }}
       data-ad-client={process.env.NEXT_PUBLIC_GOOGLE_ADS_CLIENT_ID}
+      data-ad-slot="1782703616"
       {...props}
     />
   );

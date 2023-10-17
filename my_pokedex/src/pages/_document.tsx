@@ -7,10 +7,9 @@ export default function Document() {
       <Head>
         <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
         <Script
-          id="9094217428"
           onError={(e) => { console.error("Script failed to load", e); }}
           async
-          src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${process.env.NEXT_PUBLIC_GOOGLE_ADS_CLIENT_ID}`}
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
           strategy="afterInteractive"
           crossOrigin="anonymous"
         />
