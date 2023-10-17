@@ -1,3 +1,4 @@
+import Head from "next/head"
 import { Dasboard } from "@/components/Dashboard"
 import {Header} from "../components/Header"
 import { SearchBar } from '@/components/Search'
@@ -19,16 +20,22 @@ export default function Home() {
 
   
   return (
-    <main
-      className={`flex min-h-screen flex-col items-center min-w-full gap-3`}
-    >
-      <Header>
-        <ButtonPage next={nextPage} previous={previousPage} setNextPage={setNextPage} setPokemonList={setPokemonList} setPreviousPaget={setPreviousPage}>Anterior</ButtonPage>
-        <SearchBar setPokemon={setPokemon}/>
-        <ButtonPage next={nextPage} previous={previousPage} setPokemonList={setPokemonList} setNextPage={setNextPage} setPreviousPaget={setPreviousPage}>Próxima</ButtonPage>
-      </Header>
-      <Dasboard pokemon={pokemon} pageOfPokemons={pageOfPokemons} setNextPage={setNextPage} setPreviousPage={setPreviousPage} pokemonList={pokemonList} setPokemonsList={setPokemonList}/>      
-   
-   </main>
+    <>
+      <Head>
+        <title>Pokedéx</title>
+        <meta name="description" content="All pokemóns in pokedéx" />
+      </Head>    
+      <main
+        className={`flex min-h-screen flex-col items-center min-w-full gap-3`}
+      >
+        <Header>
+          <ButtonPage next={nextPage} previous={previousPage} setNextPage={setNextPage} setPokemonList={setPokemonList} setPreviousPaget={setPreviousPage}>Anterior</ButtonPage>
+          <SearchBar setPokemon={setPokemon}/>
+          <ButtonPage next={nextPage} previous={previousPage} setPokemonList={setPokemonList} setNextPage={setNextPage} setPreviousPaget={setPreviousPage}>Próxima</ButtonPage>
+        </Header>
+        <Dasboard pokemon={pokemon} pageOfPokemons={pageOfPokemons} setNextPage={setNextPage} setPreviousPage={setPreviousPage} pokemonList={pokemonList} setPokemonsList={setPokemonList}/>      
+    
+    </main>
+    </>
   )
 }
