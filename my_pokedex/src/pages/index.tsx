@@ -5,6 +5,8 @@ import { SearchBar } from '@/components/Search'
 import {useState } from "react"
 import { ButtonPage } from "@/components/ButtonPages"
 import { Adsense } from "@ctrl/react-adsense"
+import { data } from "autoprefixer"
+import Error from "next/error"
 
 
 
@@ -18,6 +20,11 @@ export default function Home() {
   const [nextPage, setNextPage] = useState<string>("")
   const [previousPage, setPreviousPage] = useState<string>("")
   const [pokemonList, setPokemonList] = useState<any>([])
+
+  const dataClient = process.env.NEXT_PUBLIC_GOOGLE_ADS_CLIENT_ID
+  if(!dataClient){
+    return 
+  }
 
   
   return (
@@ -36,7 +43,7 @@ export default function Home() {
         </Header>
 
         <Adsense 
-          client={String(process.env.NEXT_PUBLIC_GOOGLE_ADS_CLIENT_ID)} 
+          client={dataClient.toString()} 
           slot="7598099081"
           style={{ width: 1280, height: 200, backgroundColor: "#ccc", borderRadius: 20, margin: 20 }}
           format=""
