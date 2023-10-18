@@ -7,6 +7,7 @@ import { ButtonPage } from "@/components/ButtonPages"
 import { Adsense } from "@ctrl/react-adsense"
 import { data } from "autoprefixer"
 import Error from "next/error"
+import SeoOptimization from "@/components/SEO/seoOptimization"
 
 
 
@@ -28,7 +29,8 @@ export default function Home() {
 
   
   return (
-    <div style={{overflowX:"hidden", paddingBottom: "20px"}}>
+    <SeoOptimization description="All Pokemons" title="Pokemon" path="/">
+      <div style={{overflowX:"hidden", paddingBottom: "20px"}}>
       <Head>
         <title>Pokedéx</title>
         <meta name="description" content="All pokemóns in pokedéx" />
@@ -52,5 +54,7 @@ export default function Home() {
         <Dasboard pokemon={pokemon} pageOfPokemons={pageOfPokemons} setNextPage={setNextPage} setPreviousPage={setPreviousPage} pokemonList={pokemonList} setPokemonsList={setPokemonList}/>      
       </main>
     </div>
+    </SeoOptimization>
+    
   )
 }
