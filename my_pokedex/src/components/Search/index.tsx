@@ -11,7 +11,7 @@ export const SearchBar = ({setPokemon }: Pokemon) => {
       </label>
       <input
         title="search-bar"
-        className={`p-1 w-96 rounded-sm border-2 border-blue-500 focus:border-blue-800 focus:outline-none`}
+        className={`p-1 w-96 rounded-sm sm:rounded-lg border-2 border-blue-500 focus:border-blue-800 focus:outline-none`}
         type="text"
         onChange={(e) => setPokemon(e.target.value)}
       />

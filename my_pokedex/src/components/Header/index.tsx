@@ -14,8 +14,8 @@ export const Header = ({children}: ParentComponentProps) => {
         p-5 border-b-4 border-blue-400
         
         `}>
-           <Image 
-                className={`animate-bounce`}
+           <Image
+                className={`lg:animate-bounce`}
                 src={"https://raw.githubusercontent.com/sleduardo20/pokedex/0671af442dff1d8f7141e49eb83b438885bbc9e9/public/img/logo.svg"}
                 width={300}
                 height={300}
@@ -23,7 +23,7 @@ export const Header = ({children}: ParentComponentProps) => {
             />
 
             <div className={`
-                flex flex-row items-end justify-around w-screen 
+                flex flex-col items-center justify-around w-screen  sm:gap-4               
             `}>
                 {children}
             </div>
@@ -31,7 +31,3 @@ export const Header = ({children}: ParentComponentProps) => {
         </div>
     )
 }
-
-
-{/* <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7287018887736567"
-     crossorigin="anonymous"></script> */}

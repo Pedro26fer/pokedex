@@ -58,7 +58,7 @@ const SaibaMais = () => {
   return (
     <SeoOptimization title="Pokémon" description="Pokémon skills and power" path={`/${name}`}>
 
-      <div className={`bg-orange-100 flex flex-col h-screen `}>
+      <div className={`bg-orange-100 flex flex-col sm:h-full lg:h-screen `}>
         <div className={`flex p-8`}>
           <button
             onClick={() => backFunction()}
@@ -69,7 +69,7 @@ const SaibaMais = () => {
 
         </div>
         <main
-          className={` h-full flex min-flex-row justify-around items-center min-w-screen gap-3 p-4`}
+          className={` h-full flex sm:flex-col lg:flex-row  justify-around items-center min-w-screen sm:gap-8 lg:gap-3 p-4`}
         >
           <div
             className={` border-b-4 border-b-orange-700 rounded-b-md w-96 h-96`}

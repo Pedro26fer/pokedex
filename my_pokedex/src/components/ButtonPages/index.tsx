@@ -27,7 +27,7 @@ export const ButtonPage = ({ children, next, previous, setPokemonList, setNextPa
 
     return(
         <button
-        className={` font-mono  text-red-500 bg-white p-1 rounded-md hover:shadow-lg`}
+        className={` font-mono  text-red-500 bg-white p-1 rounded-md hover:shadow-lg sm:w-24`}
         onClick={() => handleClick()}
         
         >

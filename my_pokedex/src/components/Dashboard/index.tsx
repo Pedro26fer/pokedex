@@ -2,12 +2,6 @@ import {useEffect } from "react";
 import { PokerCards } from "../PokerCards";
 import { getPokemons } from "@/assets/indext";
 
-
-// interface SearchedPokemon {
-//     id: number
-//     name:string
-
-// }
 interface PageOfPokemons {
     pokemon: string
     pageOfPokemons: string
@@ -23,10 +17,10 @@ export const Dasboard = ({pageOfPokemons, setNextPage, setPreviousPage, pokemonL
 
     return(
         <div className={`
-            flex flex-col w-screen-lg h-4/6 
+            flex flex-col w-full h-4/6 justify-center items-center
         `}>
             {pokemon.length < 4 ? (
-                <ul className={`flex  justify-center items-center flex-row flex-wrap w-full gap-4`}>
+                <ul className={`flex sm:flex-col lg:justify-center items-center lg:flex-row  flex-wrap w-9/12  gap-14 sm:gap-3 `}>
                     {pokemonList.map((pokemon, index) => (
                         <li key={index}><PokerCards name={pokemon.name} url={pokemon.url}/></li>
                 ))}

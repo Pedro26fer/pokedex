@@ -24,7 +24,7 @@ export const PokerCards = ({name, url} : PokemonItem) => {
     return(
         <div className={`
         flex flex-col gap-3  justify-center items-center
-        w-60  border border-blue-500 border-6 rounded-md p-3
+        lg:w-60 sm:w-96 border border-blue-500 border-6 rounded-md p-3
         font-semibold text-lg
         `}>
             <Image

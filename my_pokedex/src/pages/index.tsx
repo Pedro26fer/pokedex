@@ -39,17 +39,19 @@ export default function Home() {
         className={`flex min-h-screen flex-col items-center min-w-full gap-3`}
       >
         <Header>
-          <ButtonPage next={nextPage} previous={previousPage} setNextPage={setNextPage} setPokemonList={setPokemonList} setPreviousPaget={setPreviousPage}>Anterior</ButtonPage>
           <SearchBar setPokemon={setPokemon}/>
-          <ButtonPage next={nextPage} previous={previousPage} setPokemonList={setPokemonList} setNextPage={setNextPage} setPreviousPaget={setPreviousPage}>Próxima</ButtonPage>
+          <div className={`w-screen flex items-center  lg:justify-around sm:justify-center sm:gap-5`}>
+            <ButtonPage next={nextPage} previous={previousPage} setNextPage={setNextPage} setPokemonList={setPokemonList} setPreviousPaget={setPreviousPage}>Anterior</ButtonPage>
+            <ButtonPage next={nextPage} previous={previousPage} setPokemonList={setPokemonList} setNextPage={setNextPage} setPreviousPaget={setPreviousPage}>Próxima</ButtonPage>
+          </div>
         </Header>
 
-        <Adsense 
+        {/* <Adsense 
           client={dataClient.toString()} 
           slot="7598099081"
           style={{ width: 1280, height: 200, backgroundColor: "#ccc", borderRadius: 20, margin: 20 }}
           format=""
-        />
+        /> */}
 
         <Dasboard pokemon={pokemon} pageOfPokemons={pageOfPokemons} setNextPage={setNextPage} setPreviousPage={setPreviousPage} pokemonList={pokemonList} setPokemonsList={setPokemonList}/>      
       </main>
